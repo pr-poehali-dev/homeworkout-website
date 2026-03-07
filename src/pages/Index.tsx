@@ -104,7 +104,7 @@ const Index = () => {
               <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 Твоё тело —{" "}
                 <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                  твой спортзал
+                  твой храм
                 </span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -136,7 +136,7 @@ const Index = () => {
             </div>
             <div className="relative animate-scale-in">
               <img 
-                src="https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/88a8f790-d211-4ba1-91a7-bd739abed67e.jpg"
+                src="https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/48081576-66b4-4411-b1db-f768f65fdc4f.jpg"
                 alt="Home workout"
                 className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
               />
