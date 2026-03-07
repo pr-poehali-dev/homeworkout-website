@@ -5,10 +5,10 @@ import Icon from "@/components/ui/icon";
 
 const Index = () => {
   const workoutCategories = [
-    { name: "Кардио", icon: "Flame", count: "45 тренировок" },
+    { name: "Похудение", icon: "Flame", count: "45 тренировок" },
     { name: "Силовые", icon: "Dumbbell", count: "38 тренировок" },
-    { name: "Йога", icon: "Activity", count: "52 тренировки" },
-    { name: "Растяжка", icon: "Wind", count: "28 тренировок" },
+    { name: "Мобильность", icon: "Activity", count: "52 тренировки" },
+    { name: "Пресс", icon: "Wind", count: "28 тренировок" },
   ];
 
   const workoutVideos = [
@@ -20,7 +20,7 @@ const Index = () => {
       image: "https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/88a8f790-d211-4ba1-91a7-bd739abed67e.jpg"
     },
     {
-      title: "Утренняя йога",
+      title: "Мобильность",
       duration: "20 мин",
       level: "Легкий",
       calories: "120 ккал",
@@ -34,7 +34,7 @@ const Index = () => {
       image: "https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/88a8f790-d211-4ba1-91a7-bd739abed67e.jpg"
     },
     {
-      title: "Вечерняя растяжка",
+      title: "Пресс",
       duration: "15 мин",
       level: "Легкий",
       calories: "80 ккал",
@@ -65,21 +65,9 @@ const Index = () => {
 
   const trainers = [
     {
-      name: "Анна Смирнова",
-      specialty: "Йога и пилатес",
-      experience: "8 лет",
-      image: "https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/838fdaf8-7045-4e1a-b1c2-1f4240501c1b.jpg"
-    },
-    {
-      name: "Дмитрий Волков",
-      specialty: "Силовые тренировки",
-      experience: "10 лет",
-      image: "https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/838fdaf8-7045-4e1a-b1c2-1f4240501c1b.jpg"
-    },
-    {
-      name: "Мария Петрова",
+      name: "Влад Евстифеев",
       specialty: "Функциональный тренинг",
-      experience: "6 лет",
+      experience: "10 лет",
       image: "https://cdn.poehali.dev/projects/212dee30-fd5b-4fea-9333-9e9d63e0d245/files/838fdaf8-7045-4e1a-b1c2-1f4240501c1b.jpg"
     },
   ];
@@ -91,14 +79,13 @@ const Index = () => {
           <div className="flex items-center gap-2">
             <Icon name="Flame" className="text-primary" size={32} />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              FitHome
+              ЗалНаВыезде
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">Главная</a>
-            <a href="#workouts" className="text-foreground hover:text-primary transition-colors font-medium">Тренировки</a>
             <a href="#programs" className="text-foreground hover:text-primary transition-colors font-medium">Программы</a>
-            <a href="#trainers" className="text-foreground hover:text-primary transition-colors font-medium">Тренеры</a>
+            <a href="#trainers" className="text-foreground hover:text-primary transition-colors font-medium">Персональное ведение</a>
           </nav>
           <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
             Начать тренировку
@@ -243,51 +230,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="programs" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 bg-accent/10 text-accent hover:bg-accent/20">
-              Готовые программы
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Твой путь к результату
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Структурированные программы тренировок на любую цель
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {programs.map((program, index) => (
-              <Card 
-                key={index}
-                className="hover:shadow-xl transition-all duration-300 cursor-pointer group hover:-translate-y-2"
-              >
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 mb-6 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon name="Target" className="text-white" size={32} />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">{program.title}</h3>
-                  <p className="text-muted-foreground mb-6">{program.description}</p>
-                  <div className="flex gap-4 mb-6">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Icon name="Calendar" size={16} className="text-primary" />
-                      <span>{program.weeks} недель</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <Icon name="Video" size={16} className="text-secondary" />
-                      <span>{program.workouts} тренировок</span>
-                    </div>
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
-                    Начать программу
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section id="trainers" className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -303,7 +246,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="max-w-md mx-auto">
             {trainers.map((trainer, index) => (
               <Card 
                 key={index}
@@ -341,15 +284,9 @@ const Index = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Начни тренироваться уже сегодня
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Присоединяйся к 50,000+ человек, которые уже меняют свою жизнь с FitHome
-          </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 text-lg px-8">
               Попробовать бесплатно
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8">
-              Узнать больше
             </Button>
           </div>
         </div>
@@ -361,7 +298,7 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Icon name="Flame" className="text-primary" size={28} />
-                <span className="text-xl font-bold">FitHome</span>
+                <span className="text-xl font-bold">ЗалНаВыезде</span>
               </div>
               <p className="text-background/70">
                 Твой персональный путь к здоровью и красивому телу
@@ -370,10 +307,10 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4">Тренировки</h4>
               <ul className="space-y-2 text-background/70">
-                <li><a href="#" className="hover:text-primary transition-colors">Кардио</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Похудение</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Силовые</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Йога</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Растяжка</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Мобильность</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Пресс</a></li>
               </ul>
             </div>
             <div>
@@ -396,7 +333,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-background/20 pt-8 text-center text-background/70">
-            <p>&copy; 2026 FitHome. Все права защищены.</p>
+            <p>&copy; 2026 ЗалНаВыезде. Все права защищены.</p>
           </div>
         </div>
       </footer>
